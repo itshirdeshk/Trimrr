@@ -86,7 +86,7 @@ function Link() {
             <Button variant="ghost" onClick={downloadImage}>
               <Download />
             </Button>
-            <Button variant="ghost" onClick={() => fnDelete()}>
+            <Button variant="ghost" onClick={() => fnDelete().then(() => navigate("/dashboard"))}>
               {loadingDelete ? <BeatLoader size={5} color='white' /> : <Trash2 />}
             </Button>
           </div>
