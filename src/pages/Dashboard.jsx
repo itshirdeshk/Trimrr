@@ -49,7 +49,7 @@ function Dashboard() {
             <CardTitle>Total Clicks</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{clicks?.length ? clicks?.length : 0}</p>
+            <p>{clicks?.length > 0 ? clicks?.length : 0}</p>
           </CardContent>
         </Card>
       </div>
@@ -67,7 +67,7 @@ function Dashboard() {
       </div>
       {error && <Error message={error?.message}
       />}
-      {filteredUrls.length > 0 ? filteredUrls.map((url, i) =>
+      {filteredUrls?.length > 0 ? filteredUrls.map((url, i) =>
         <LinkCard key={i} url={url} fetchUrls={fnUrls} />
       ) : "No Links Created..."}
     </div>
